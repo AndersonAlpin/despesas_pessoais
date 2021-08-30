@@ -10,7 +10,7 @@ class ExpansesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.pink.shade300,
+        primaryColor: Colors.cyan.shade700,
       ),
       home: MyHomePage(),
     );

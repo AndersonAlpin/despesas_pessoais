@@ -5,26 +5,26 @@ class MyHomePage extends StatelessWidget {
   final _transactions = [
     Transaction(
       id: '1',
-      title: 'Boleto do banco',
-      value: 600.00,
+      title: 'Boleto da faculdade',
+      value: 309.00,
       date: DateTime.now(),
     ),
     Transaction(
       id: '2',
-      title: 'Luz',
-      value: 51.00,
+      title: 'Conta de Internet',
+      value: 65.00,
       date: DateTime.now(),
     ),
     Transaction(
       id: '3',
-      title: 'Almoço',
-      value: 32.00,
+      title: 'Gás',
+      value: 90.00,
       date: DateTime.now(),
     ),
     Transaction(
       id: '4',
-      title: 'Lanche',
-      value: 20.00,
+      title: 'Pizza',
+      value: 21.00,
       date: DateTime.now(),
     ),
   ];
@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Despesas Pessoais'),
+        title: Text('Anderson Alpin'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -45,27 +45,45 @@ class MyHomePage extends StatelessWidget {
           Container(
             width: double.infinity,
             child: Card(
-              color: Colors.blueAccent,
+              color: Colors.white70,
               child: Text('Gráfico'),
               elevation: 5,
             ),
           ),
           Column(
             children: _transactions.map((tr) {
-              return Card(
-                child: Row(
-                  children: [
-                    Container(
-                      color: Colors.red,
-                      child: Text(tr.value.toString())
-                    ),
-                    Column(
-                      children: [
-                        Text(tr.title),
-                        Text(tr.date.toString())
-                      ],
-                    ),
-                  ],
+              return SizedBox(
+                height: 80,
+                child: Card(
+                  margin: const EdgeInsets.only(top:5.0, bottom: 5.0),
+                  color: Colors.white70,
+                  child: Row(
+                    children: [
+                      ClipOval(
+                        child: Container(
+                          width: 67,
+                          height: 64,
+                          color: Colors.cyan.shade700,
+                          child: Center(
+                            child: Text(
+                              tr.value.toString(),
+                            ),
+                          )
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(tr.title,), 
+                            Text(tr.date.toString())
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             }).toList(),
