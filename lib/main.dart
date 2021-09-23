@@ -1,3 +1,4 @@
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:despesas_pessoais/views/home.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,11 @@ class ExpansesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: [const Locale('pt', 'BR')],
       theme: ThemeData(
         primaryColor: Colors.cyan.shade700,
       ),
