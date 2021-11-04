@@ -9,7 +9,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Anderson Alpin'),
+        title: Text('Despesas Pessoais - Anderson Alpin'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,

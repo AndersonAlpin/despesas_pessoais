@@ -42,6 +42,7 @@ class TransactionForm extends StatelessWidget {
                 ),
               ),
               TextField(
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
                 controller: valueController,
                 decoration: InputDecoration(
                   hintText: 'Informe o valor',
