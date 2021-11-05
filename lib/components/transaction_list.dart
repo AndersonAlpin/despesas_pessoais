@@ -9,6 +9,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(top: 5.0),
       child: Column(
         children: transactions.map((tr) {
           return SizedBox(

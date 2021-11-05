@@ -18,6 +18,7 @@ class ExpansesApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.cyan.shade700,
       ),
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }

@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class TransactionForm extends StatelessWidget {
+class TransactionForm extends StatefulWidget {
   TransactionForm({Key? key, required this.onSubmit}) : super(key: key);
+  final void Function(String, double) onSubmit;
+
+  @override
+  State<TransactionForm> createState() => _TransactionFormState();
+}
+
+class _TransactionFormState extends State<TransactionForm> {
   TextEditingController titleController = TextEditingController();
+
   TextEditingController valueController = TextEditingController();
 
   _submitForm() {
@@ -14,10 +22,8 @@ class TransactionForm extends StatelessWidget {
       return;
     }
 
-    onSubmit(title, value);
+    widget.onSubmit(title, value);
   }
-
-  final void Function(String, double) onSubmit;
 
   @override
   Widget build(BuildContext context) {
